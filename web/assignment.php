@@ -1,4 +1,4 @@
-<html> 
+<!DOCTYPE html> 
     <?php $title = 'Assignment Portal'; ?>
     <?php $desc = 'Page with all assignment listings'; ?>
     <?php $currentPage = 'assignment'; ?>
