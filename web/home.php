@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="en">
 <?php $title = 'Collin Blake\'s Homepage'; ?>
 <?php $desc = 'Homepage for Collin Blake'; ?>
 <?php $currentPage = 'home'; ?>
