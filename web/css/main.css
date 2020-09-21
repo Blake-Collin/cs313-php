@@ -131,6 +131,7 @@ main img {
     margin: auto;
     max-width: 250px;
     height: auto;
+    width: auto;
     padding: 20px;
 }
 
