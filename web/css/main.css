@@ -1,0 +1,168 @@
+/* Code colors to variables for easier playing to find nice colors */
+:root {
+    --bg-color: #4F5D2F;
+    --txt-color: #CFD6EA;
+    --active-bg: #423629;
+    --active-text: #B0B2B8;
+    --hover-bg: #CFD6EA;
+    --hover-text: #7D7E75; 
+    --main-bg: #423629;
+}
+
+* {
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.container,
+.navigation,
+main,
+a {
+    max-width: 800px;
+    color: var(--txt-color);
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-color);
+}
+
+li:nth-child(1) {
+    display: block;
+}
+
+nav {
+    margin-bottom: 25px;
+    background-color: var(--bg-color);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0px;
+}
+
+nav ul li {
+    margin: 0px;
+}
+
+nav a {
+    display: block;
+    color: var(--txt-color);
+    padding: 0.75rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+nav a.active {
+    background-color: var(--active-bg);
+    color: var(--active-text);
+}
+
+li {
+    display: none;
+}
+
+.responsive li {
+    display: block;
+}
+
+nav a:hover {
+
+    color: var(--hover-text);
+    background-color: var(--hover-bg);
+}
+
+main {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--main-bg);
+}
+
+main ul li h2 {
+    padding-bottom: 20px;
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0px;
+}
+
+main ul li {
+    display: block;
+}
+main ul li a {
+    display: block;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+main ul li a:hover {
+    color: var(--hover-text);
+    background-color: var(--hover-bg);
+}
+
+main h2 {
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+main p {
+    padding: 25px;
+}
+
+main section ul {
+    text-align: left;
+}
+
+main img {
+    display: block;
+    align-self: center;
+    margin: auto;
+    max-width: 250px;
+    height: auto;
+    padding: 20px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-color);
+}
+
+@media only screen and (min-width: 37.5em) {
+
+    nav ul li:nth-child(1) {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav ul li {
+        flex: 1 1 100%;
+        display: block;
+    }
+
+    nav ul li a {
+        text-align: center;
+    }
+
+    footer ul {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 64em) {}
