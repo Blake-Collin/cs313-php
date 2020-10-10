@@ -29,7 +29,7 @@ INNER JOIN
 WHERE 
     g.game_id = '. $ID .';'))
     {
-        $details = $rows[0];
+        $details = $rows->fetch(PDO::FETCH_ASSOC);
     }
 
 }
