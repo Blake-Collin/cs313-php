@@ -61,7 +61,10 @@ WHERE
                 <p>Play Time (Minutes): <?php echo $details['duration']; ?> </p>
             </span> 
         </div>
-        <p class="description"><?php echo $details['description_text']; ?></p>
+        <div>
+            <h3>Description</h3>
+            <p class="description"><?php echo $details['description_text']; ?></p>
+        </div>
         </section>
         <section id="market">
             <h3>Market</h3>
