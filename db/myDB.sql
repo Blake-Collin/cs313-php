@@ -140,6 +140,7 @@ WHERE games.game_id = images.game_id;
 --Test joining tables and specific games by id
 SELECT 
 	g.name,
+	d.description_text,
 	d.duration,
 	d.complexity,
 	d.max_players,

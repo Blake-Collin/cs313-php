@@ -19,11 +19,11 @@
             <?php                
                 foreach ($db->query('SELECT g.game_id, g.name, i.img_name, i.alt_txt FROM games g INNER JOIN images i ON g.game_id = i.game_id') as $row)
                 {
-                  echo "<div><a href='./details.php?id={$row['game_id']}' class='gameItem'><p>{$row['name']}</p>
+                  echo "<div><a href='./details.php?ID={$row['game_id']}' class='gameItem'><p>{$row['name']}</p>
                   <img src='./imgs/{$row['img_name']}' alt='{$row['alt_txt']}'>
                   <a></div>";
                 }
-            ?>                   
+            ?>
         </div>
     </main>
 
