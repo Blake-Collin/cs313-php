@@ -1,4 +1,4 @@
-<?php include('./php/databse.php') ?>
+<?php include('./php/database.php') ?>
 
 <?php 
 //Pull in needed data here for the details page
