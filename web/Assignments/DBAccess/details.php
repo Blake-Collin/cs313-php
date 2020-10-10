@@ -72,13 +72,17 @@ WHERE
             </div>
             <div id="sales">
                 <h4>For Sale</h4>
-                <p>Coming Soon!</P>
+                <div>
+                    <p>Coming Soon!</P>
+                </div>
                 <!--- Needs to be built out later -->
             </div>
         </section>
         <section id="reviews">
             <h3>Reveiws</h3>
-            <p>Coming soon!</p>
+            <div>
+                <p>Coming soon!</p>
+            </div>
             <!--- Needs to be built out later -->
         </section>
 
