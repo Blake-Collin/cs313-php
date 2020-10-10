@@ -54,14 +54,14 @@ WHERE
         <section id="information">
         <h2><?php echo $details['name']; ?></h2>
         <div>
-            <img src="<?php echo $details['img_name']; ?>" alt="<?php echo $details['alt_txt']; ?>"> 
+            <img src="./imgs/<?php echo $details['img_name']; ?>" alt="<?php echo $details['alt_txt']; ?>"> 
             <span class="list"> 
                 <p>Complexity: <?php echo $details['complexity']; ?> </p>
                 <p>Players: <?php echo $details['min_players']; ?>-<?php echo $details['max_players']; ?> </p>
                 <p>Play Time (Minutes): <?php echo $details['duration']; ?> </p>
             </span> 
         </div>
-        <p><?php echo $details['descripton_text']; ?></p>
+        <p><?php echo $details['description_text']; ?></p>
         </section>
         <section id="market">
             <h3>Market</h3>
