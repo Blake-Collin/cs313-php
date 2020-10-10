@@ -4,7 +4,7 @@
 if(isset($_GET['ID']))
 {
     $ID = $_GET['ID'];
-    
+
 if(
     $rows = $db->query('SELECT 
 	g.name,
@@ -29,7 +29,7 @@ INNER JOIN
 WHERE 
     g.game_id = '. $ID .';'))
     {
-        $details = $rows->fetch_row();
+        $details = $rows[0];
     }
 
 }
