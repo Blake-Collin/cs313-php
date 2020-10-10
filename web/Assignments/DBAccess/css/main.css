@@ -284,12 +284,12 @@ section div {
     padding: 5px;
 }
 
-.classContainer img {
+.listContainer img {
     height: auto;
     width: auto;
 }
 
-.classContainer {
+.listContainer {
     display: flex;
     flex-direction: column;
 }
@@ -301,7 +301,7 @@ section div {
 /* Medium view */
 @media only screen and (min-width: 37.5em) {
 
-    .classContainer {        
+    .listContainer {        
         flex-direction: row;
     }
 
