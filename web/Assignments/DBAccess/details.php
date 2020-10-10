@@ -4,6 +4,7 @@
 if(isset($_GET['ID']))
 {
     $ID = $_GET['ID'];
+    
 if(
     $rows = $db->query('SELECT 
 	g.name,
@@ -26,7 +27,7 @@ INNER JOIN
 INNER JOIN
 	images i ON g.game_id = i.game_id
 WHERE 
-    g.game_id = $ID;'))
+    g.game_id = '. $ID .';'))
     {
         $details = $rows->fetch_row();
     }
