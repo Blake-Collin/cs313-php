@@ -38,8 +38,8 @@ WHERE
 
 <!DOCTYPE html>
 <html lang="en">
-<?php $title = details['name']; ?>
-<?php $desc = 'Details Page for '. details['name']; ?>
+<?php $title = $details['name'] ?>
+<?php $desc = 'Details Page for '. $details['name']; ?>
 <?php $currentPage = 'details'; ?>
 <?php include('./php/head.php'); ?>
 
@@ -52,23 +52,23 @@ WHERE
     <main>
         
         <section id="information">
-        <h2><?php echo details['name']; ?></h2>
+        <h2><?php echo $details['name']; ?></h2>
         <div>
-            <img src="<?php echo details['img_name']; ?>" alt="<?php echo details['alt_txt']; ?>"> 
+            <img src="<?php echo $details['img_name']; ?>" alt="<?php echo $details['alt_txt']; ?>"> 
             <span class="list"> 
-                <p>Complexity: <?php echo details['complexity']; ?> </p>
-                <p>Players: <?php echo details['min_players']; ?>-<?php echo details['max_players']; ?> </p>
-                <p>Play Time (Minutes): <?php echo details['duration']; ?> </p>
+                <p>Complexity: <?php echo $details['complexity']; ?> </p>
+                <p>Players: <?php echo $details['min_players']; ?>-<?php echo $details['max_players']; ?> </p>
+                <p>Play Time (Minutes): <?php echo $details['duration']; ?> </p>
             </span> 
         </div>
-        <p><?php echo details['descripton_text']; ?></p>
+        <p><?php echo $details['descripton_text']; ?></p>
         </section>
         <section id="market">
             <h3>Market</h3>
             <div id="pricing">
-                <p>MSRP: <?php echo details['msrp_price']; ?> </p>
-                <p>Historical High: <?php echo details['historical_high']; ?> </p>
-                <p>Historical Low: <?php echo details['historical_low']; ?> </p>
+                <p>MSRP: <?php echo $details['msrp_price']; ?> </p>
+                <p>Historical High: <?php echo $details['historical_high']; ?> </p>
+                <p>Historical Low: <?php echo $details['historical_low']; ?> </p>
             </div>
             <div id="sales">
                 <h4>For Sale</h4>
