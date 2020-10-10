@@ -52,8 +52,8 @@ WHERE
     <main>
         
         <section id="information">
-        <h2><?php echo $details['name']; ?></h2>
-        <div>
+        <h2><?php echo $details['name']; ?></h2>        
+        <div class="listContainer">
             <img src="./imgs/<?php echo $details['img_name']; ?>" alt="<?php echo $details['alt_txt']; ?>"> 
             <span class="list"> 
                 <p>Complexity: <?php echo $details['complexity']; ?> </p>
@@ -61,7 +61,7 @@ WHERE
                 <p>Play Time (Minutes): <?php echo $details['duration']; ?> </p>
             </span> 
         </div>
-        <p><?php echo $details['description_text']; ?></p>
+        <p class="description"><?php echo $details['description_text']; ?></p>
         </section>
         <section id="market">
             <h3>Market</h3>

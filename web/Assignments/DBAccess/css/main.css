@@ -272,8 +272,38 @@ input[type=number]{
     max-width: 38px
 }
 
+section {
+    text-align: center;
+}
+
+section div {
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.classContainer img {
+    height: auto;
+    width: auto;
+}
+
+.classContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    text-align: left;
+}
+
 /* Medium view */
 @media only screen and (min-width: 37.5em) {
+
+    .classContainer {        
+        flex-direction: row;
+    }
 
     header img,
     header a {
