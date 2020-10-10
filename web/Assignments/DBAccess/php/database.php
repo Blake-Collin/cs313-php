@@ -1,5 +1,5 @@
 <?php 
-
+echo "test!";
 try
 {
   $dbUrl = getenv('DATABASE_URL');
