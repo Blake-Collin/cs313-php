@@ -4,7 +4,7 @@
 if(isset($_GET['ID']))
 {
     $ID = $_GET['ID'];
-    $row = $db->query('SELECT 
+    $rows = $db->query('SELECT 
 	g.name,
 	d.description_text,
 	d.duration,
@@ -26,7 +26,7 @@ INNER JOIN
 	images i ON g.game_id = i.game_id
 WHERE 
     g.game_id = $ID;');
-    $details = $row->fetch(PDO::FETCH_ASSOC);
+    $details = $rows->fetch_row();
 }
 
 ?>
