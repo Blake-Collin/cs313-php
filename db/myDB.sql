@@ -124,9 +124,9 @@ INSERT INTO images (game_id, img_name, alt_txt)
 INSERT INTO images (game_id, img_name, alt_txt)
 	VALUES ('3', 'sekigahara.jpg', 'Box Art for Sekigahara');
 INSERT INTO images (game_id, img_name, alt_txt)
-	VALUES ('4', 'startrekascendancy.jpg', 'Box Art For Star Trek Ascendancy');
+	VALUES ('5', 'startrekascendancy.jpg', 'Box Art For Star Trek Ascendancy');
 INSERT INTO images (game_id, img_name, alt_txt)
-	VALUES ('5', 'startrekfleetcaptains.jpg', 'Box Art for Star Trek Fleet Captains');
+	VALUES ('4', 'startrekfleetcaptains.jpg', 'Box Art for Star Trek Fleet Captains');
 INSERT INTO images (game_id, img_name, alt_txt)
 	VALUES ('6', 'twilightimperium.jpg', 'Box Art for Twilight Imperium 4th Edition');
 INSERT INTO images (game_id, img_name, alt_txt)
