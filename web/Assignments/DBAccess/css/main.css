@@ -299,7 +299,7 @@ section div {
     text-align: left;
 }
 
-.searchForm, label.searchForm {
+.searchForm, label.searchForm, .saleForm, .reviewForm {
     flex-direction: row;
 }
 

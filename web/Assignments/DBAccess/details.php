@@ -131,21 +131,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include('./php/nav.php'); ?>
 
     <main>
-        
+
         <section id="information">
-        <h2><?php echo $details['name']; ?></h2>        
-        <div class="listContainer">
-            <img src="./imgs/<?php echo $details['img_name']; ?>" alt="<?php echo $details['alt_txt']; ?>"> 
-            <span class="list"> 
-                <p>Complexity: <?php echo $details['complexity']; ?> </p>
-                <p>Players: <?php echo $details['min_players']; ?>-<?php echo $details['max_players']; ?> </p>
-                <p>Play Time (Minutes): <?php echo $details['duration']; ?> </p>
-            </span> 
-        </div>
-        <h3>Description</h3>
-        <div>            
-            <p class="description"><?php echo $details['description_text']; ?></p>
-        </div>
+            <h2><?php echo $details['name']; ?></h2>
+            <div class="listContainer">
+                <img src="./imgs/<?php echo $details['img_name']; ?>" alt="<?php echo $details['alt_txt']; ?>">
+                <span class="list">
+                    <p>Complexity: <?php echo $details['complexity']; ?> </p>
+                    <p>Players: <?php echo $details['min_players']; ?>-<?php echo $details['max_players']; ?> </p>
+                    <p>Play Time (Minutes): <?php echo $details['duration']; ?> </p>
+                </span>
+            </div>
+            <h3>Description</h3>
+            <div>
+                <p class="description"><?php echo $details['description_text']; ?></p>
+            </div>
         </section>
         <section id="market">
             <h3>Market</h3>
@@ -155,13 +155,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Historical Low: <?php echo $details['historical_low']; ?> </p>
             </div>
             <div id="sales">
-                <h4>For Sale</h4>
+                <h3>Selling</h3>
                 <div>
+                    <h4>For Sale</h4>
                     <p>Coming Soon!</P>
                 </div>
                 <div>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                        <label> Review: 
+                    <h4>Post for Sale</h4>
+                    <form method="post" class="saleForm"
+                        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
+                        <label class="saleForm"> Review:
                             <span>
                                 <select name="condition" value="<?php echo $condition;?>">
                                     <option value='New'>New</option>
@@ -174,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="error">* <?php echo $conditionErr;?></span>
                             </span>
                         </label>
-                        <label> Price: 
+                        <label class="saleForm"> Price:
                             <span>
                                 <input type="text" name="price" value="<?php echo $price;?>">
                                 <span class="error">* <?php echo $priceErr;?></span>
@@ -187,30 +190,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </section>
         <section id="reviews">
-            <h3>Reveiws</h3>
+            <h3>Reviews</h3>
             <div>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <label> Rating: 
-                    <span>
-                        <select name="rate" value="<?php echo $rate;?>">
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                            <option value='4'>4</option>
-                            <option value='5'>5</option>
-                        </select>
-                        <span class="error">* <?php echo $rateErr;?></span>
-                    </span>
-                </label>
-                <label> Review: 
-                    <span>
-                        <textarea name="textbox" value="<?php echo $textbox;?>"></textarea>
-                        <span class="error">* <?php echo $reivewErr;?></span>
-                    </span>
-                </label>
-                <input type="hidden" name="action" value="review">
-                <input type="submit" class="button" name="submit" value="Submit">
-            </form>
+                <div>
+                    <h4>Player Reviews</h4>
+                    <p>Coming Soon!</P>
+                </div>
+                <div>
+                    <h4>Post Review</h4>
+                    <form method="post" class="reviewForm"
+                        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
+                        <label class="reviewForm"> Rating:
+                            <span>
+                                <select name="rate" value="<?php echo $rate;?>">
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                </select>
+                                <span class="error">* <?php echo $rateErr;?></span>
+                            </span>
+                        </label>
+                        <label class="reviewForm"> Review:
+                            <span>
+                                <textarea name="textbox" value="<?php echo $textbox;?>"></textarea>
+                                <span class="error">* <?php echo $reivewErr;?></span>
+                            </span>
+                        </label>
+                        <input type="hidden" name="action" value="review">
+                        <input type="submit" class="button" name="submit" value="Submit">
+                    </form>
+                </div>
             </div>
         </section>
 
