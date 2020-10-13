@@ -38,9 +38,9 @@ $game = $gameErr = "";
 
     <main>
         <h2>Search Games</h2>
-        <form id="searchForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <label>Name: <input type="text" name="game" value="<?php echo $game ?>">
-            <span class="error">* <?php echo $gameErr;?></span></label>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <label id="searchForm">Game Name: <span><input type="text" name="game" value="<?php echo $game ?>">
+            <span class="error">* <?php echo $gameErr;?></span></span></label>
             <input type="submit" value="Search">
         </form>        
         <div id="gridContainer">        

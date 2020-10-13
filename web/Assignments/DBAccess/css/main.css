@@ -299,7 +299,7 @@ section div {
     text-align: left;
 }
 
-form#searchForm>label {
+#searchForm {
     flex-direction: row;
     background-color: gray;
 }
