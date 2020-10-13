@@ -5,32 +5,32 @@ if(isset($_GET['ID']))
 {
     $ID = $_GET['ID'];
 
-if(
-    $rows = $db->query('SELECT 
-	g.name,
-	d.description_text,
-	d.duration,
-	d.complexity,
-	d.max_players,
-	d.min_players,
-	m.msrp_price,
-	m.historical_low,
-	m.historical_high,
-	i.img_name,
-	i.alt_txt
-FROM
-	games g
-INNER JOIN
-	description d ON g.game_id = d.game_id
-INNER JOIN
-	msrp m ON g.game_id = m.game_id
-INNER JOIN
-	images i ON g.game_id = i.game_id
-WHERE 
-    g.game_id = '. $ID .';'))
-    {
-        $details = $rows->fetch(PDO::FETCH_ASSOC);
-    }
+    if(
+        $rows = $db->query('SELECT 
+        g.name,
+        d.description_text,
+        d.duration,
+        d.complexity,
+        d.max_players,
+        d.min_players,
+        m.msrp_price,
+        m.historical_low,
+        m.historical_high,
+        i.img_name,
+        i.alt_txt
+    FROM
+        games g
+    INNER JOIN
+        description d ON g.game_id = d.game_id
+    INNER JOIN
+        msrp m ON g.game_id = m.game_id
+    INNER JOIN
+        images i ON g.game_id = i.game_id
+    WHERE 
+        g.game_id = '. $ID .';'))
+        {
+            $details = $rows->fetch(PDO::FETCH_ASSOC);
+        }
 
 }
 
