@@ -154,8 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Historical High: <?php echo $details['historical_high']; ?> </p>
                 <p>Historical Low: <?php echo $details['historical_low']; ?> </p>
             </div>
-            <div id="sales">
-                <h3>Selling</h3>
+            <h3>Selling</h3>
+            <div id="sales">                
                 <div>
                     <h4>For Sale</h4>
                     <p>Coming Soon!</P>

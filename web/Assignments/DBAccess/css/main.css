@@ -303,6 +303,10 @@ section div {
     flex-direction: row;
 }
 
+form.reviewForm, form.saleForm {
+    margin-left: 0px;
+}
+
 textarea {
     display: block;
     margin: auto;
