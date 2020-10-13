@@ -21,7 +21,7 @@
                 {
                   echo "<div><a href='./details.php?ID={$row['game_id']}' class='gameItem'><p>{$row['name']}</p>
                   <img src='./imgs/{$row['img_name']}' alt='{$row['alt_txt']}'>
-                  <a></div>";
+                  </a></div>";
                 }
             ?>
         </div>
