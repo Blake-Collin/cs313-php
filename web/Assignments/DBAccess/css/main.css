@@ -299,7 +299,7 @@ section div {
     text-align: left;
 }
 
-#searchForm {
+.searchForm {
     flex-direction: row;
     background-color: gray;
 }

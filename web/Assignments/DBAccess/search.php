@@ -38,11 +38,13 @@ $game = $gameErr = "";
 
     <main>
         <h2>Search Games</h2>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <label id="searchForm">Game Name: <span><input type="text" name="game" value="<?php echo $game ?>">
-            <span class="error">* <?php echo $gameErr;?></span></span></label>
-            <input type="submit" value="Search">
-        </form>        
+        <div>
+            <form class="searchForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <label class="searchForm">Game Name: <span><input type="text" name="game" value="<?php echo $game ?>">
+                <span class="error">* <?php echo $gameErr;?></span></span></label>
+                <input type="submit" value="Search">
+            </form>        
+        </div>
         <div id="gridContainer">        
             <?php                
                 if($gameErr == "" && $game != "")
