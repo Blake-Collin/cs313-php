@@ -299,6 +299,11 @@ section div {
     text-align: left;
 }
 
+#searchForm label {
+    flex-direction: row;
+    background-color: gray;
+}
+
 /* Medium view */
 @media only screen and (min-width: 37.5em) {
 

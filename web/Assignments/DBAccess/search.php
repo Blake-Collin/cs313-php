@@ -12,8 +12,6 @@ $game = $gameErr = "";
                 $gameErr = "Only letters and white space allowed";
             }
         }
-
-
     }
 
     //Function for clearing inputs for code injections
@@ -49,7 +47,7 @@ $game = $gameErr = "";
             <?php                
                 if($gameErr == "" && $game != "")
                 {
-                    foreach ($db->query("SELECT g.game_id, g.name, i.img_name, i.alt_txt FROM games g INNER JOIN images i ON g.game_id = i.game_id WHERE g.name LIKE '%$game%'") as $row)
+                    foreach ($db->query("SELECT g.game_id, g.name, i.img_name, i.alt_txt FROM games g INNER JOIN images i ON g.game_id = i.game_id WHERE g.name ILIKE '%$game%'") as $row)
                     {
                         echo "<div><a href='./details.php?id={$row['game_id']}' class='gameItem'><p>{$row['name']}</p>
                         <img src='./imgs/{$row['img_name']}' alt='{$row['alt_txt']}'>
