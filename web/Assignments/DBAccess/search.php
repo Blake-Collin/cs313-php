@@ -7,7 +7,7 @@ $game = $gameErr = "";
         if (empty($_POST["game"])) {
             $gameErr = "Game name is required";
         } else {
-            $name = test_input($_POST["game"]);
+            $game = test_input($_POST["game"]);
             if (!preg_match("/^[a-zA-Z-' ]*$/",$game)) {
                 $gameErr = "Only letters and white space allowed";
             }
