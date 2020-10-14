@@ -3,7 +3,7 @@
 <?php 
 if(isset($_GET['ID']))
 {
-    $ID = $_GET['ID'];
+    $ID = test_input($_GET['ID']);
 
     if(
         $rows = $db->query('SELECT 
@@ -104,8 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
     }    
 }
-
-
 
     //Function for clearing inputs for code injections
     function test_input($data) {
