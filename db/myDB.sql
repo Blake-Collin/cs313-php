@@ -133,9 +133,9 @@ INSERT INTO images (game_id, img_name, alt_txt)
 	VALUES ('7', 'warofthering2nd.jpg', 'Box Art for War of the Ring 2nd Edition');
 	
 --Test our items are working and connected
-SELECT games.name, images.img_name, images.alt_txt
-FROM games, images
-WHERE games.game_id = images.game_id;
+SELECT g.name, i.img_name, i.alt_txt
+FROM games g, images i
+WHERE g.game_id = i.game_id;
 
 --Test joining tables and specific games by id
 SELECT 
