@@ -116,13 +116,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     VALUES 
                         (". $ID .", ". $price .", '". $condition ."');"))
                     {
-                        if($price < $details['historical_low'])
+                        if($price < floatval($details['historical_low']))
                         {
                             $update = $db->query("UPDATE msrp SET historical_low =". $price . "WHERE game_id = ". $ID .";");
+                            $details['historical_low'] = $price;
                         }
-                        else if ($price > $details['historical_high'])
+                        else if ($price > floatval($details['historical_high']))
                         {
                             $update = $db->query("UPDATE msrp SET historical_high =". $price . "WHERE game_id = ". $ID .";");
+                            $details['historical_high'] = $price;
                         }                            
 
                         $price = "";
