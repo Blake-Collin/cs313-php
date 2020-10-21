@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query("INSERT INTO reviews 
                         (game_id, rating, review_text)
                     VALUES 
-                        (". $ID .", ". $rate .", '". mysqli::escape_string($textbox) ."');"))
+                        (". $ID .", ". $rate .", '". pg_escape_string($textbox) ."');"))
                     {                                            
                         $rate = $textbox = "";
                     }
