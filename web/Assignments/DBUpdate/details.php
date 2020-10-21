@@ -175,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div id="sales">                
                 <h4>For Sale</h4>  
                 <?php 
-                echo '<table>
+                echo '<table><thead>
                         <tr>                            
                             <th>Condition</th>
                             <th>Price</th>';
@@ -184,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo '<th>Remove?</th>';
                 }
                             
-                echo '</tr>';
+                echo '</tr></thead><tbody>';
                     foreach($db->query("SELECT s.sale_id, s.price, s.condition FROM for_sale s WHERE s.game_id = '$ID'") as $row)
                     {
                         echo '<tr>
@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </form>
                                     </td>';
                                 }
-                            echo '</tr></table>';
+                            echo '</tr></tbody></table>';
                     }
                     ?>              
             </div>
@@ -239,7 +239,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
                 <h4>Player Reviews</h4>
                 <?php 
-                echo '<table><tbody>
+                echo '<table><thead>
                         <tr>                            
                             <th>Rating</th>
                             <th>Review</th>';
@@ -248,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo '<th>Remove?</th>';
                 }
                             
-                echo '</tr>';
+                echo '</tr></thead><tbody>';
                     foreach($db->query("SELECT r.review_id, r.rating, r.review_text FROM reviews r WHERE r.game_id = '$ID'") as $row)
                     {
                         echo '<tr>
