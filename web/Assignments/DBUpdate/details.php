@@ -148,73 +148,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <h3>Selling</h3>
             <div id="sales">                
-                <div>
-                    <h4>For Sale</h4>
-                    <p>Coming Soon!</P>
-                </div>
-                <div>
-                    <h4>Post for Sale</h4>
-                    <form method="post" class="saleForm"
-                        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
-                        <label class="saleForm"> Review:
-                            <span>
-                                <select name="condition" value="<?php echo $condition;?>">
-                                    <option value='New'>New</option>
-                                    <option value='Like New'>Like New</option>
-                                    <option value='Very Good'>Very Good</option>
-                                    <option value='Good'>Good</option>
-                                    <option value='Acceptable'>Acceptable</option>
-                                    <option value='Unacceptable'>Unacceptable</option>
-                                </select>
-                                <span class="error">* <?php echo $conditionErr;?></span>
-                            </span>
-                        </label>
-                        <label class="saleForm"> Price:
-                            <span>
-                                <input type="text" name="price" value="<?php echo $price;?>">
-                                <span class="error">* <?php echo $priceErr;?></span>
-                            </span>
-                        </label>
-                        <input type="hidden" name="action" value="sell">
-                        <input type="submit" class="button" name="submit" value="Submit">
-                    </form>
-                </div>
+                <h4>For Sale</h4>
+                <p>Coming Soon!</P>
             </div>
+            <div>
+                <h4>Post for Sale</h4>
+                <form method="post" class="saleForm"
+                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
+                    <label class="saleForm"> Review:
+                        <span>
+                            <select name="condition" value="<?php echo $condition;?>">
+                                <option value='New'>New</option>
+                                <option value='Like New'>Like New</option>
+                                <option value='Very Good'>Very Good</option>
+                                <option value='Good'>Good</option>
+                                <option value='Acceptable'>Acceptable</option>
+                                <option value='Unacceptable'>Unacceptable</option>
+                            </select>
+                            <span class="error">* <?php echo $conditionErr;?></span>
+                        </span>
+                    </label>
+                    <label class="saleForm"> Price:
+                        <span>
+                            <input type="text" name="price" value="<?php echo $price;?>">
+                            <span class="error">* <?php echo $priceErr;?></span>
+                        </span>
+                    </label>
+                    <input type="hidden" name="action" value="sell">
+                    <input type="submit" class="button" name="submit" value="Submit">
+                </form>
+            </div>            
         </section>
         <section id="reviews">
             <h3>Reviews</h3>
             <div>
-                <div>
-                    <h4>Player Reviews</h4>
-                    <p>Coming Soon!</P>
-                </div>
-                <div>
-                    <h4>Post Review</h4>
-                    <form method="post" class="reviewForm"
-                        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
-                        <label class="reviewForm"> Rating:
-                            <span>
-                                <select name="rate" value="<?php echo $rate;?>">
-                                    <option value='1'>1</option>
-                                    <option value='2'>2</option>
-                                    <option value='3'>3</option>
-                                    <option value='4'>4</option>
-                                    <option value='5'>5</option>
-                                </select>
-                                <span class="error">* <?php echo $rateErr;?></span>
-                            </span>
-                        </label>
-                        <label class="reviewForm"> Review:
-                            <span>
-                                <textarea name="textbox" value="<?php echo $textbox;?>"></textarea>
-                                <span class="error">* <?php echo $reivewErr;?></span>
-                            </span>
-                        </label>
-                        <input type="hidden" name="action" value="review">
-                        <input type="submit" class="button" name="submit" value="Submit">
-                    </form>
-                </div>
+                <h4>Player Reviews</h4>
+                <p>Coming Soon!</P>
             </div>
+            <div>
+                <h4>Post Review</h4>
+                <form method="post" class="reviewForm"
+                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
+                    <label class="reviewForm"> Rating:
+                        <span>
+                            <select name="rate" value="<?php echo $rate;?>">
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                            <span class="error">* <?php echo $rateErr;?></span>
+                        </span>
+                    </label>
+                    <label class="reviewForm"> Review:
+                        <span>
+                            <textarea name="textbox" value="<?php echo $textbox;?>"></textarea>
+                            <span class="error">* <?php echo $reivewErr;?></span>
+                        </span>
+                    </label>
+                    <input type="hidden" name="action" value="review">
+                    <input type="submit" class="button" name="submit" value="Submit">
+                </form>
+            </div>            
         </section>
 
     </main>
