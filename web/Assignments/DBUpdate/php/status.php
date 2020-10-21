@@ -58,8 +58,6 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
         {
             $hash2Save = password_hash($pass1, PASSWORD_DEFAULT);
 
-            if($found = $db->$query)
-
             try{
                 if(
                 $success = $db->query('INSERT INTO admins 
