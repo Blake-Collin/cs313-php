@@ -134,11 +134,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     }
-    else if ($_POST["action"] == "removeReview")
+    else if ($_POST["action"] == "removeReview" && isset($_SESSION['logged']) && $_SESSION['logged'])
     {
         $db->query('DELETE FROM reviews r WHERE r.review_id = '. $_POST['review_id'] .';');
     }    
-    else if ($_POST["action"] == "removeSale")
+    else if ($_POST["action"] == "removeSale" && isset($_SESSION['logged']) && $_SESSION['logged'])
     {
         $db->query('DELETE FROM for_sale s WHERE s.sale_id = '. $_POST['sale_id'] .';');
     }    
@@ -192,7 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <tr>                            
                             <th>Condition</th>
                             <th>Price</th>';
-                if(isset($_SESSION) && $_SESSION['logged'])
+                if(isset($_SESSION['logged']) && $_SESSION['logged'])
                 {
                     echo '<th>Remove?</th>';
                 }
@@ -204,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <td>'. $row['condition']. '</td>
                                 <td> <p>' .  $row['price']  . '</p></td>';
                                 
-                                if(isset($_SESSION) && $_SESSION['logged'])
+                                if(isset($_SESSION['logged']) && $_SESSION['logged'])
                                 {
                                     echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID  .'">
                                     <input type="hidden" name="action" value="removeSale">
@@ -257,7 +257,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <tr>                            
                             <th>Rating</th>
                             <th>Review</th>';
-                if(isset($_SESSION) && $_SESSION['logged'])
+                if(isset($_SESSION['logged']) && $_SESSION['logged'])
                 {
                     echo '<th>Remove?</th>';
                 }
@@ -269,7 +269,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <td>'. $row['rating']. '</td>
                                 <td> <p>' .  $row['review_text']  . '</p></td>';
                                 
-                                if(isset($_SESSION) && $_SESSION['logged'])
+                                if(isset($_SESSION['logged']) && $_SESSION['logged'])
                                 {
                                     echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID .'">
                                     <input type="hidden" name="action" value="removeReview">
