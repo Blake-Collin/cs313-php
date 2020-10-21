@@ -120,12 +120,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         if(
                             $msrp = $db->query("SELECT FROM msrp m
                             WHERE m.game_id =". $ID .";"))
-                            {                                            
-                                if($msrp['historical_low'] > $price)
+                            {       
+                                $row = $msrp->fetch(PDO::FETCH_ASSOC);                                     
+                                if($row['historical_low'] > $price)
                                 {
                                     $update = $db->query("UPDATE msrp SET historical_low =". $price . "WHERE game_id = ". $ID .";");
                                 }
-                                else if ($msrp['historical_high'] < $price)
+                                else if ($row['historical_high'] < $price)
                                 {
                                     $update = $db->query("UPDATE msrp SET historical_high =". $price . "WHERE game_id = ". $ID .";");
                                 }
