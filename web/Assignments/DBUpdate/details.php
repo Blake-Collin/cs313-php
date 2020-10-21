@@ -238,8 +238,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h3>Reviews</h3>
             <div>
                 <h4>Player Reviews</h4>
-                
+                <?php 
+                echo '<table><tbody>
+                        <tr>                            
+                            <th>Rating</th>
+                            <th>Review</th>';
+                if(isset($_SESSION) && $_SESSION['logged'])
+                {
+                    echo '<th>Remove?</th>';
+                }
+                            
+                echo '</tr>';
+                    foreach($db->query("SELECT r.review_id, r.rating, r.review_text FROM reviews r WHERE r.game_id = '$ID'") as $row)
+                    {
+                        echo '<tr>
+                                <td>'. $row['rating']. '</td>
+                                <td> <p>' .  $row['review_text']  . '</p></td>';
+                                
+                                if(isset($_SESSION) && $_SESSION['logged'])
+                                {
+                                    echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID .'">
+                                    <input type="hidden" name="action" value="removeReview">
+                                    <input type="hidden" name="review_id" value="' . $row['review_id'] . '">
+                                    <input type="submit" value="Remove">
+                                    </form>
+                                    </td>';
+                                }                            
+                            echo '</tr></tbody></table>';
+                    }
+                    ?>
             </div>
+            
             <div>
             <h4>Post Review</h4>
                 <form method="post" class="reviewForm"
