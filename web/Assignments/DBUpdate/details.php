@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         
                         if(
                             $msrp = $db->query("SELECT FROM msrp m
-                            WHERE m.game_id =". $ID .";"));
+                            WHERE m.game_id =". $ID .";"))
                             {                                            
                                 if($msrp['historical_low'] > $price)
                                 {
