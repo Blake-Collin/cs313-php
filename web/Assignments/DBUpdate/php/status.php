@@ -57,7 +57,11 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
         if($cPass == "onmyhonor" && $pass1 == $pass2)
         {
             $hash2Save = password_hash($pass1, PASSWORD_DEFAULT);
-            if(
+
+            if($found = $db->$query)
+
+            try{
+                if(
                 $success = $db->query('INSERT INTO admins 
                     (username, stored_hash)
                 VALUES 
@@ -66,10 +70,11 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
                     $_SESSION["logged"] = true;
                     $_SESSION["username"] = $user;
                 }
-                else
-                {
-                    $loginErr == "Username already exists please try again";
-                }
+            }
+            catch (Exception $e)
+            {
+                $loginErr == "Username already exists please try again";
+            }
         }
         else
         {
