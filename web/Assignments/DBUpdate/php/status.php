@@ -32,7 +32,7 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
         FROM
             admins a
         WHERE
-            a.username = '. $user .';'))
+            username = \''. $user .'\';'))
             {
                 $details = $rows->fetch(PDO::FETCH_ASSOC);
             }
