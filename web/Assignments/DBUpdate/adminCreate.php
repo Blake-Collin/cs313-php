@@ -5,9 +5,9 @@ include('./php/status.php');
 
 <!DOCTYPE html>
 <html lang="en">
-<?php $title = 'Administrator Login'; ?>
-<?php $desc = 'Login into the site if you are an admin.'; ?>
-<?php $currentPage = 'login'; ?>
+<?php $title = 'Administrator Creation'; ?>
+<?php $desc = 'Create Admin for the site if you are an admin.'; ?>
+<?php $currentPage = 'creation'; ?>
 <?php include('./php/head.php'); ?>
 
 <body>
@@ -24,7 +24,7 @@ include('./php/status.php');
         <label> Create Password: <span> <input type="password" name="pass1" value="<?php echo $pass1;?>"></span> </label>
         <label> Verify Password: <span> <input type="password" name="pass2" value="<?php echo $pass2;?>"></span> </label>
         <label> Creation Password: <span> <input type="password" name="cPass" value="<?php echo $cPass;?>"></span> </label>
-        <input type="hidden" value="create">
+        <input type="hidden" name="action" value="create">
         <input type="submit" class="button" name="submit" value="Login">
         </form>
     </main>

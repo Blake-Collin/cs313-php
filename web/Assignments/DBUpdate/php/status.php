@@ -13,7 +13,7 @@
  }
  $_SESSION['LAST_ACTIVITY'] = $time;
  
-$user = $pass = $loginErr = "";
+$user = $pass = $loginErr = $pass2 = $cPass = "";
 
  if(count($_POST) != 0)
  {
