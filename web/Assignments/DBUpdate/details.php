@@ -123,11 +123,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else if ($_POST["action"] == "removeReview")
     {
-        $db->query('DELETE FROM reviews WHERE review_id = "'. $_POST['review_id'] .'";');
+        $db->query('DELETE FROM reviews r WHERE r.review_id = "'. $_POST['review_id'] .'";');
     }    
     else if ($_POST["action"] == "removeSale")
     {
-        $db->query('DELETE FROM for_sale WHERE sale_id = "'. $_POST['sale_id'] .'";');
+        $db->query('DELETE FROM for_sale s WHERE s.sale_id = "'. $_POST['sale_id'] .'";');
     }    
 }
 ?>
