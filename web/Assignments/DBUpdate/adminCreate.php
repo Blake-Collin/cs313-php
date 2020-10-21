@@ -21,9 +21,9 @@ include('./php/status.php');
         <span class="error"><?php echo $loginErr;?></span>
         <form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <label> Username: <span> <input type="text" name="user" value="<?php echo $user;?>"></span> </label>
-        <label> Create Password: <span> <input type="text" name="pass1" value="<?php echo $pass1;?>"></span> </label>
-        <label> Verify Password: <span> <input type="text" name="pass2" value="<?php echo $pass2;?>"></span> </label>
-        <label> Creation Password: <span> <input type="text" name="cPass" value="<?php echo $cPass;?>"></span> </label>
+        <label> Create Password: <span> <input type="password" name="pass1" value="<?php echo $pass1;?>"></span> </label>
+        <label> Verify Password: <span> <input type="password" name="pass2" value="<?php echo $pass2;?>"></span> </label>
+        <label> Creation Password: <span> <input type="password" name="cPass" value="<?php echo $cPass;?>"></span> </label>
         <input type="hidden" value="create">
         <input type="submit" class="button" name="submit" value="Login">
         </form>
