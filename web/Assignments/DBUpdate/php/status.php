@@ -28,8 +28,7 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
         if(
             $rows = $db->query('SELECT 
             a.username,
-            a.stored_hash,
-            a.salt
+            a.stored_hash
         FROM
             admins a
         WHERE
