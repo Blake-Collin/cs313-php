@@ -320,8 +320,8 @@ h4 {
 
 #logstatus {
     padding: 10px;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #logstatus > form, #logstatus > p {
