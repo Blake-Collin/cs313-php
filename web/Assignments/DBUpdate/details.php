@@ -68,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             && $rateErr == "")
             {
                 if(
-                    $success = $db->query('INSERT INTO reviews 
+                    $success = $db->query("INSERT INTO reviews 
                         (game_id, rating, review_text)
                     VALUES 
-                        ('. $ID .', '. $rate .', \"'. $textbox .'\");'))
+                        (". $ID .", ". $rate .", '". $textbox ."');"))
                     {                                            
                         $rate = $textbox = "";
                     }
@@ -111,10 +111,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $priceErr == "")
             {
                 if(
-                    $success = $db->query('INSERT INTO for_sale 
-                        (game_id, price, condition, sold)
+                    $success = $db->query("INSERT INTO for_sale 
+                        (game_id, price, condition)
                     VALUES 
-                        ('. $ID .', '. $price .', \''. $condition .'\', 0);'))
+                        (". $ID .", ". $price .", '". $condition ."');"))
                     {                                            
                         $price = "";
                         $condition = "New";
