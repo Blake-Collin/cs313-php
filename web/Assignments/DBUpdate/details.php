@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query("INSERT INTO reviews 
                         (game_id, rating, review_text)
                     VALUES 
-                        (". $ID .", ". $rate .", '". $textbox ."');"))
+                        (". $ID .", ". $rate .", '". mysql_real_escape_string($textbox) ."');"))
                     {                                            
                         $rate = $textbox = "";
                     }
@@ -116,10 +116,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     VALUES 
                         (". $ID .", ". $price .", '". $condition ."');"))
                     {                                            
-                        $price = "";
-                        $condition = "New";
+                        
+                        if(
+                            $msrp = $db->query("SELECT FROM msrp m
+                            WHERE m.game_id =". $ID .";"));
+                            {                                            
+                                if($msrp['historical_low'] > $price)
+                                {
+                                    $update = $db->query("UPDATE msrp SET historical_low =". $price . "WHERE game_id = ". $ID .";");
+                                }
+                                else if ($msrp['historical_high'] < $price)
+                                {
+                                    $update = $db->query("UPDATE msrp SET historical_high =". $price . "WHERE game_id = ". $ID .";");
+                                }
+                            }
+
+                            $price = "";
+                            $condition = "New";                            
                     }
             }
+
+
     }
     else if ($_POST["action"] == "removeReview")
     {
