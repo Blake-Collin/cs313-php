@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query('INSERT INTO for_sale 
                         (game_id, price, condition, sold)
                     VALUES 
-                        (\''. $ID .'\', \''. $price .'\', \''. $condition .'\', \''. false .'\');'))
+                        (\''. $ID .'\', \''. $price .'\', \''. $condition .'\', '. false .');'))
                     {                                            
                         $price = "";
                         $condition = "New";
