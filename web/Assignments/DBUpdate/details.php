@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query('INSERT INTO reviews 
                         (game_id, rating, review_text)
                     VALUES 
-                        ("'. $ID .'", "'. $rate .'", "'. $textbox .'");'))
+                        ('. $ID .', '. $rate .', "'. $textbox .'");'))
                     {                                            
                         $rate = $textbox = "";
                     }
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query('INSERT INTO for_sale 
                         (game_id, price, condition, sold)
                     VALUES 
-                        ("'. $ID .'", "'. $price .'", "'. $condition .'", "0");'))
+                        ('. $ID .', '. $price .', "'. $condition .'", 0);'))
                     {                                            
                         $price = "";
                         $condition = "New";
