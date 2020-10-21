@@ -37,7 +37,7 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
                 $details = $rows->fetch(PDO::FETCH_ASSOC);
             }
         //Set Status
-        if(password_verify($hash, $details['stored_hash']))
+        if(password_verify($pass, $details['stored_hash']))
         {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $user;
