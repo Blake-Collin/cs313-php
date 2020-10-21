@@ -9,9 +9,9 @@
         <?php 
             if(isset($_SESSION['logged']) && isset($_SESSION['username']) && $_SESSION['logged'])
             {
-                echo "<p id='logged'> Current User: " . $_SESSION['username'] . "</p>";
+                echo " <div class='container'><form method='post' action='". htmlspecialchars($_SERVER["PHP_SELF"]) ."'>
+                <input type='hidden' name='action' value='logout'>                
+                <input type='submit' value='Logout'> </form> <p id='logged'> Current User: " . $_SESSION['username'] . "</p></div>";
             }
         ?>
-        <div id="us">
-        </div>
     </header>

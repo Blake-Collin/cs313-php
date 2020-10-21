@@ -76,6 +76,12 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
             $loginErr = "Your creation attempt has been denied.";
         }
     }
+    else if ($action == "logout")
+    {
+        session_unset();
+        session_destroy();
+        session_start();
+    }
  }
  else
  {
