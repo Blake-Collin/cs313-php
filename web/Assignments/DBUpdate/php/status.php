@@ -13,6 +13,8 @@
  }
  $_SESSION['LAST_ACTIVITY'] = $time;
  
+$user = $pass = $loginErr = "";
+
  if(count($_POST) != 0)
  {
     $action = clear_data($_POST['action']);
