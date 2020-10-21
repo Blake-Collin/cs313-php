@@ -64,7 +64,7 @@ CREATE TABLE for_sale (
 );
 
 CREATE TABLE admins (
-	admin_id SERIAL NOT NULL PRIMARY,
+	admin_id SERIAL NOT NULL PRIMARY KEY,
 	username VARCHAR(100) NOT NULL UNIQUE,
 	stored_hash TEXT NOT NULL
 );
