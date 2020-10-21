@@ -200,8 +200,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </form>
                                     </td>';
                                 }
-                            echo '</tr></tbody></table>';
+                            echo '</tr>';
                     }
+                    echo '</tbody></table>';
                     ?>              
             </div>
             
@@ -264,8 +265,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </form>
                                     </td>';
                                 }                            
-                            echo '</tr></tbody></table>';
+                            echo '</tr>';
                     }
+                    echo '</tbody></table>';
                     ?>
             </div>
             
