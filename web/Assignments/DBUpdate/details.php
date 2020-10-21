@@ -67,7 +67,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             && $textbox != ""
             && $rateErr == "")
             {
-                
+                if(
+                    $success = $db->query('INSERT INTO reviews 
+                        (game_id, rating, review_text)
+                    VALUES 
+                        (\''. $ID .'\', \''. $rate .'\', \''. $textbox .'\');'))
+                    {                                            
+                        $rate = $textbox = "";
+                    }
             }
 
 
@@ -103,8 +110,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conditionErr == "" &&
             $priceErr == "")
             {
-                //Add statement here to insert into our table later
+                if(
+                    $success = $db->query('INSERT INTO for_sale 
+                        (game_id, price, condition, sold)
+                    VALUES 
+                        (\''. $ID .'\', \''. $price .'\', \''. $condition .'\', \''. false .'\');'))
+                    {                                            
+                        $price = "";
+                        $condition = "New";
+                    }
             }
+    }
+    else if ($_POST["action"] == "removeReview")
+    {
+        $db->query('DELETE FROM reviews WHERE review_id = \''. $_POST['reivew_id'] .'\';');
+    }    
+    else if ($_POST["action"] == "removeSale")
+    {
+        $db->query('DELETE FROM for_sale WHERE sale_id = \''. $_POST['sale_id'] .'\';');
     }    
 }
 ?>
@@ -148,8 +171,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <h3>Selling</h3>
             <div id="sales">                
-                <h4>For Sale</h4>
-                <p>Coming Soon!</P>
+                <h4>For Sale</h4>  
+                <?php 
+                echo '<table>
+                        <tr>
+                            <th></th>
+                            <th>Condition</th>
+                            <th>Price</th>';
+                if(isset($_SESSION) && $_SESSION['logged'])
+                {
+                    echo '<th>Remove?</th>';
+                }
+                            
+                echo '</tr>';
+                    foreach($db->query("SELECT s.sale_id, s.price, s.condition FROM for_sale s WHERE s.game_id = '$ID'") as $row)
+                    {
+                        echo '<tr>
+                                <td>'. $row['condition']. '</td>
+                                <td> <p>' .  $row['price']  . '</p></td>';
+                                
+                                if(isset($_SESSION) && $_SESSION['logged'])
+                                {
+                                    echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID  .'">
+                                    <input type="hidden" name="action" value="removeSale">
+                                    <input type="hidden" name="sale_id" value="' . $row['sale_id'] . '">
+                                    <input type="submit" value="Remove">
+                                    </form>
+                                    </td>';
+                                }
+                            echo '</tr>';
+                    }
+                    ?>              
             </div>
             <div>
                 <h4>Post for Sale</h4>
@@ -183,7 +235,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h3>Reviews</h3>
             <div>
                 <h4>Player Reviews</h4>
-                <p>Coming Soon!</P>
+                <?php 
+                echo '<table>
+                        <tr>
+                            <th></th>
+                            <th>Rating</th>
+                            <th>Review</th>';
+                if(isset($_SESSION) && $_SESSION['logged'])
+                {
+                    echo '<th>Remove?</th>';
+                }
+                            
+                echo '</tr>';
+                    foreach($db->query("SELECT r.review_id, r.rating, r.review_text FROM reviews r WHERE r.game_id = '$ID'") as $row)
+                    {
+                        echo '<tr>
+                                <td>'. $row['rating']. '</td>
+                                <td> <p>' .  $row['review_text']  . '</p></td>';
+                                
+                                if(isset($_SESSION) && $_SESSION['logged'])
+                                {
+                                    echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID .'">
+                                    <input type="hidden" name="action" value="removeReview">
+                                    <input type="hidden" name="review_id" value="' . $row['review_id'] . '">
+                                    <input type="submit" value="Remove">
+                                    </form>
+                                    </td>';
+                                }                            
+                            echo '</tr>';
+                    }
+                    ?>
             </div>
             <div>
                 <h4>Post Review</h4>

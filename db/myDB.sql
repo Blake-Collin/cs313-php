@@ -143,6 +143,22 @@ SELECT g.name, i.img_name, i.alt_txt
 FROM games g, images i
 WHERE g.game_id = i.game_id;
 
+SELECT 
+a.username,
+a.stored_hash
+FROM
+admins a
+WHERE
+a.username like 'admin';
+
+SELECT 
+r.rating,
+r.review_text
+FROM
+reviews r
+WHERE
+r.game_id = '1';
+
 --Test joining tables and specific games by id
 SELECT 
 	g.name,
