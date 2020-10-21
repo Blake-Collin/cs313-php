@@ -162,6 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="description"><?php echo $details['description_text']; ?></p>
             </div>
         </section>
+
         <section id="market">
             <h3>Market</h3>
             <div id="pricing">
@@ -169,13 +170,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Historical High: <?php echo $details['historical_high']; ?> </p>
                 <p>Historical Low: <?php echo $details['historical_low']; ?> </p>
             </div>
+
             <h3>Selling</h3>
             <div id="sales">                
                 <h4>For Sale</h4>  
                 <?php 
                 echo '<table>
-                        <tr>
-                            <th></th>
+                        <tr>                            
                             <th>Condition</th>
                             <th>Price</th>';
                 if(isset($_SESSION) && $_SESSION['logged'])
@@ -199,10 +200,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </form>
                                     </td>';
                                 }
-                            echo '</tr>';
+                            echo '</tr></table>';
                     }
                     ?>              
             </div>
+            
             <div>
                 <h4>Post for Sale</h4>
                 <form method="post" class="saleForm"
@@ -231,14 +233,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>            
         </section>
+
         <section id="reviews">
             <h3>Reviews</h3>
             <div>
                 <h4>Player Reviews</h4>
                 <?php 
                 echo '<table>
-                        <tr>
-                            <th></th>
+                        <tr>                            
                             <th>Rating</th>
                             <th>Review</th>';
                 if(isset($_SESSION) && $_SESSION['logged'])
@@ -262,12 +264,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </form>
                                     </td>';
                                 }                            
-                            echo '</tr>';
+                            echo '</tr></table>';
                     }
                     ?>
             </div>
             <div>
-                <h4>Post Review</h4>
+            <h4>Post Review</h4>
                 <form method="post" class="reviewForm"
                     action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID;?>">
                     <label class="reviewForm"> Rating:
