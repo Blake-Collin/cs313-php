@@ -115,25 +115,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         (game_id, price, condition)
                     VALUES 
                         (". $ID .", ". $price .", '". $condition ."');"))
-                    {                                            
-                        
-                        if(
-                            $msrp = $db->query("SELECT FROM msrp m
-                            WHERE m.game_id =". $ID .";"))
-                            {       
-                                $row = $msrp->fetch(PDO::FETCH_ASSOC);                                     
-                                if($row['historical_low'] > $price)
-                                {
-                                    $update = $db->query("UPDATE msrp SET historical_low =". $price . "WHERE game_id = ". $ID .";");
-                                }
-                                else if ($row['historical_high'] < $price)
-                                {
-                                    $update = $db->query("UPDATE msrp SET historical_high =". $price . "WHERE game_id = ". $ID .";");
-                                }
-                            }
+                    {
+                        if($price < $details['historical_low'])
+                        {
+                            $update = $db->query("UPDATE msrp SET historical_low =". $price . "WHERE game_id = ". $ID .";");
+                        }
+                        else if ($price > $details['historical_high'])
+                        {
+                            $update = $db->query("UPDATE msrp SET historical_high =". $price . "WHERE game_id = ". $ID .";");
+                        }                            
 
-                            $price = "";
-                            $condition = "New";                            
+                        $price = "";
+                        $condition = "New";
                     }
             }
 
