@@ -46,7 +46,6 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
         {
             $loginErr = "Incorrect user ID or password. Type the correct user ID and password, and try again.";
         }
-        
     }
     else if ($action == "create")
     {
@@ -62,7 +61,7 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
                 $success = $db->query('INSERT INTO admins 
                     (username, stored_hash)
                 VALUES 
-                    ('. $user .','. $hash2Save .');'))
+                    (\''. $user .'\', \''. $hash2Save .'\');'))
                 {                    
                     $_SESSION["logged"] = true;
                     $_SESSION["username"] = $user;
