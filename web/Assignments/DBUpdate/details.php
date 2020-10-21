@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             && $textbox != ""
             && $rateErr == "")
             {
-                //Do insert here into sales table later
+                
             }
 
 
