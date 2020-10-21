@@ -63,6 +63,12 @@ CREATE TABLE for_sale (
 	CHECK (price > 0.0 AND price < 9999.99)
 );
 
+CREATE TABLE admins (
+	admin_id SERIAL NOT NULL PRIMARY,
+	username VARCHAR(100) NOT NULL UNIQUE,
+	stored_hash TEXT NOT NULL
+);
+
 --Base Game Inserts
 INSERT INTO games (name)
 	VALUES ('Battlestar Galactica: The Board Game');
