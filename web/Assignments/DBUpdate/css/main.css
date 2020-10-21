@@ -328,7 +328,7 @@ h4 {
     margin: 5px;
 }
 
-#sales > table, #reviews > table {
+#sales > table, #postedReviews > table {
     color: black;
 }
 

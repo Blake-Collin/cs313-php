@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query("INSERT INTO reviews 
                         (game_id, rating, review_text)
                     VALUES 
-                        (". $ID .", ". $rate .", '". real_escape_string($textbox) ."');"))
+                        (". $ID .", ". $rate .", '". $textbox ."');"))
                     {                                            
                         $rate = $textbox = "";
                     }
@@ -250,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <section id="reviews">
             <h3>Reviews</h3>
-            <div>
+            <div id="postedReviews">
                 <h4>Player Reviews</h4>
                 <?php 
                 echo '<table><thead>
