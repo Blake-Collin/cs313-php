@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $success = $db->query('INSERT INTO for_sale 
                         (game_id, price, condition, sold)
                     VALUES 
-                        ("'. $ID .'", "'. $price .'", "'. $condition .'", "'. 0 .'");'))
+                        ("'. $ID .'", "'. $price .'", "'. $condition .'", "0");'))
                     {                                            
                         $price = "";
                         $condition = "New";
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else if ($_POST["action"] == "removeReview")
     {
-        $db->query('DELETE FROM reviews WHERE review_id = "'. $_POST['reivew_id'] .'";');
+        $db->query('DELETE FROM reviews WHERE review_id = "'. $_POST['review_id'] .'";');
     }    
     else if ($_POST["action"] == "removeSale")
     {
