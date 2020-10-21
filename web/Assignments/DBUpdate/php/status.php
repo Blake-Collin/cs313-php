@@ -41,6 +41,7 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
         {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $user;
+            $user = $pass = $loginErr = $pass2 = $cPass = "";
         }
         else
         {
@@ -67,6 +68,7 @@ $user = $pass = $loginErr = $pass2 = $cPass = "";
                 {                    
                     $_SESSION["logged"] = true;
                     $_SESSION["username"] = $user;
+                    $user = $pass = $loginErr = $pass2 = $cPass = "";
                 }
             }
             catch (Exception $e)
