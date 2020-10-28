@@ -7,7 +7,7 @@ include('./php/status.php');
 <html lang="en">
 <?php $title = 'Sign-in'; ?>
 <?php $desc = 'Sign into the site.'; ?>
-<?php $currentPage = 'signin'; ?>
+<?php $currentPage = 'welcome'; ?>
 <?php include('./php/head.php'); ?>
 
 <body>
