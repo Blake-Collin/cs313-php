@@ -57,7 +57,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $user;
             $user = $pass = $loginErr = $pass2 = $passErr = "";
-            header('Location: signin.php');
+            header('Location: index.php');
         }
         else
         {
