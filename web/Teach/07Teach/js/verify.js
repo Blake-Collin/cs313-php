@@ -8,6 +8,10 @@ function checkUser(inputName) {
     {
         document.getElementById(inputName + "Err").value = "* Username is inncorrect format must be Letters only!";
     }
+    else
+    {
+        document.getElementById(inputName + "Err").value = "*";
+    }
 }
 
 function checkPassword(inputPass) {
@@ -15,5 +19,9 @@ function checkPassword(inputPass) {
     if(!pass.value.match(PASSREGEX))
     {
         document.getElementById(inputPass + "Err").value = "* Minimum eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character is required!";
+    }
+    else
+    {
+        document.getElementById(inputPass + "Err").value = "*";
     }
 }
