@@ -21,7 +21,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
     if (empty($_POST["user"])) {
         $nameErr = "Name is required";
       } else if(isset($_POST["pass2"])) {
-        $user = test_input($_POST["user"]);
+        $user = clear_data($_POST["user"]);
         if (!preg_match("/^[a-zA-Z-_'1-9]*$/",$user)) {
           $userErr = "Only letters and numbers allowed";
         }
@@ -30,7 +30,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
     if (empty($_POST["pass"])) {
         $passErr = "Name is required";
     } else if(isset($_POST["pass2"])) {
-        $pass = test_input($_POST["pass"]);
+        $pass = clear_data($_POST["pass"]);
         if (!preg_match("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",$pass)) {
         $passErr = "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character required!";
         }
@@ -40,7 +40,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
     
     if (isset($_POST["pass2"]) && empty($_POST["pass"]) || empty($_POST["pass2"])) {
         $passErr = "Password fields cannot be blank";
-    } else if (test_input($_POST["pass"]) != test_input($_POST["pass2"]))
+    } else if (clear_data($_POST["pass"]) != clear_data($_POST["pass2"]))
     {
         $passErr = "Passwords must match!";
     }
