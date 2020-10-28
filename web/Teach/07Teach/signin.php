@@ -23,7 +23,8 @@ include('./php/status.php');
         <label> Username: <span> <input type="text" name="user" value="<?php echo $user;?>">
         <span class="error">* <?php echo $userErr;?></span></span> </label>
         <label> Create Password: <span> <input type="password" name="pass" value="<?php echo $pass;?>">
-        <span class="error">* <?php echo $passErr;?></span></span> </label>        
+        <span class="error">* <?php echo $passErr;?></span></span> </label>
+        <input type="hidden" name="action" value="login">        
         <input type="submit" class="button" name="submit" value="Sign-in">
         </form>
     </main>

@@ -32,7 +32,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
     } else if(isset($_POST["pass"])) {
         $pass = clear_data($_POST["pass"]);
         if (!preg_match("/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\W])(?=\S*[\d])\S*$/",$pass)) {
-        $passErr = "Minimum eight characters, at least one uppercase letter, one lowercase letter, and one number required!";
+        $passErr = "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character is required!";
         }
     }
 
@@ -57,6 +57,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $user;
             $user = $pass = $loginErr = $pass2 = $passErr = "";
+            header('Location: signin.php');
         }
         else
         {
