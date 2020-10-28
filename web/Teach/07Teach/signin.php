@@ -17,14 +17,14 @@ include('./php/status.php');
     <?php include('./php/nav.php'); ?>
 
     <main>
-        <h2>Account Creation</h2>
+        <h2>Sign In</h2>
         <span class="error"><?php echo $loginErr;?></span>
         <form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <label> Username: <span> <input type="text" name="user" value="<?php echo $user;?>">
         <span class="error">* <?php echo $userErr;?></span></span> </label>
         <label> Create Password: <span> <input type="password" name="pass" value="<?php echo $pass;?>">
         <span class="error">* <?php echo $passErr;?></span></span> </label>
-        <input type="hidden" name="action" value="login">        
+        <input type="hidden" name="action" value="login">
         <input type="submit" class="button" name="submit" value="Sign-in">
         </form>
     </main>
