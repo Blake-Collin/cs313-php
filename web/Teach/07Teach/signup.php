@@ -20,11 +20,11 @@ include('./php/status.php');
         <h2>Account Creation</h2>
         <span class="error"><?php echo $loginErr;?></span>
         <form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <label> Username: <span> <input type="text" onchange="checkUser('user')" id="user" name="user" value="<?php echo $user;?>">
+        <label> Username: <span> <input type="text" onkeypress="checkUser('user')" id="user" name="user" value="<?php echo $user;?>">
         <span class="error" id="userErr">* <?php echo $userErr;?></span></span> </label>
-        <label> Create Password: <span> <input type="password" onchange="checkPassword('pass')" id="pass" name="pass" value="<?php echo $pass;?>">
+        <label> Create Password: <span> <input type="password" onkeypress="checkPassword('pass')" id="pass" name="pass" value="<?php echo $pass;?>">
         <span class="error" id="passErr">* <?php echo $passErr;?></span></span> </label>
-        <label> Verify Password: <span> <input type="password" onchange="checkPassword('pass2')" id="pass2" name="pass2" value="<?php echo $pass2;?>"></span> </label>
+        <label> Verify Password: <span> <input type="password" onkeypress="checkPassword('pass2')" id="pass2" name="pass2" value="<?php echo $pass2;?>"></span> </label>
         <input type="hidden" name="action" value="create">
         <input type="submit" class="button" name="submit" value="create">
         </form>
