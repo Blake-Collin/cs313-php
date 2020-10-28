@@ -28,24 +28,13 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
       }
 
     if (empty($_POST["pass"])) {
-        $passErr = "Name is required";
-    } else if(isset($_POST["pass2"])) {
+        $passErr = "Password is required";
+    } else if(isset($_POST["pass"])) {
         $pass = clear_data($_POST["pass"]);
         if (!preg_match("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",$pass)) {
         $passErr = "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character required!";
         }
-    } else {
-        $passErr = "Password doesn't match.";
     }
-    
-    if (isset($_POST["pass2"]) && empty($_POST["pass"]) || empty($_POST["pass2"])) {
-        $passErr = "Password fields cannot be blank";
-    } else if (clear_data($_POST["pass"]) != clear_data($_POST["pass2"]))
-    {
-        $passErr = "Passwords must match!";
-    }
-
-
 
     $action = clear_data($_POST['action']);
     if($action == "login" && $nameErr == "" && $passErr == "")
@@ -67,45 +56,53 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
         {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $user;
-            $user = $pass = $loginErr = $pass2 = $cPass = "";
+            $user = $pass = $loginErr = $pass2 = $passErr = "";
         }
         else
         {
             $loginErr = "Incorrect user ID or password. Type the correct user ID and password, and try again.";
         }
     }
-    else if ($action == "create" && $nameErr == "" && $passErr == "")
+    else if ($action == "create")
     {
-        $user = clear_data($_POST['user']);
-        $pass1 = clear_data($_POST['pass1']);
+        if (isset($_POST["pass2"]) && empty($_POST["pass"]) || empty($_POST["pass2"])) {
+            $passErr = "Password fields cannot be blank";
+        } else if (clear_data($_POST["pass"]) != clear_data($_POST["pass2"]))
+        {
+            $passErr = "Passwords must match!";
+        }
+
         $pass2 = clear_data($_POST['pass2']);
 
-        if($pass1 == $pass2)
+        if($nameErr == "" && $passErr == "")
         {
-            $hash2Save = password_hash($pass1, PASSWORD_DEFAULT);
-
-            try{
-                if(
-                $success = $db->query('INSERT INTO admins 
-                    (username, stored_hash)
-                VALUES 
-                    (\''. $user .'\', \''. $hash2Save .'\');'))
-                {                    
-                    $_SESSION["logged"] = true;
-                    $_SESSION["username"] = $user;
-                    $user = $pass = $loginErr = $pass2 = $cPass = "";
+            if($pass == $pass2)
+            {
+                $hash2Save = password_hash($pass, PASSWORD_DEFAULT);
+    
+                try{
+                    if(
+                    $success = $db->query('INSERT INTO admins 
+                        (username, stored_hash)
+                    VALUES 
+                        (\''. $user .'\', \''. $hash2Save .'\');'))
+                    {                    
+                        $_SESSION["logged"] = true;
+                        $_SESSION["username"] = $user;
+                        $user = $pass = $loginErr = $pass2 = $passErr = "";
+                    }
+                    header('Location: signin.php');
+                }
+                catch (Exception $e)
+                {
+                    $loginErr == "Username already exists please try again";
                 }
             }
-            catch (Exception $e)
+            else
             {
-                $loginErr == "Username already exists please try again";
+                $loginErr = "Your creation attempt has been denied.";
             }
-        }
-        else
-        {
-            $loginErr = "Your creation attempt has been denied.";
-        }
-        header('Location: signin.php');
+        }        
     }
     else if ($action == "logout")
     {
