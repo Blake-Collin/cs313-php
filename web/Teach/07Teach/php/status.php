@@ -20,7 +20,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
     //Check our inputs
     if (empty($_POST["user"])) {
         $nameErr = "Name is required";
-      } else if(isset($_POST["pass2"])) {
+      } else if(isset($_POST["user"])) {
         $user = clear_data($_POST["user"]);
         if (!preg_match("/^[a-zA-Z-_'1-9]*$/",$user)) {
           $userErr = "Only letters and numbers allowed";
