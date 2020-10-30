@@ -25,7 +25,7 @@ include('./php/cartstatus.php');
     }
     else 
     {
-        echo '<span class="error"><?php echo $loginErr;?></span>
+        echo '<span class="error">'.$loginErr.'</span>
         <form id="login" method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
         <label> Username: <span> <input type="text" name="user" value="'.$user.'">
         <span class="error">* '.$userErr. '</span></span> </label>
