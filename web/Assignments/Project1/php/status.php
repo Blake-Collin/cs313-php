@@ -91,7 +91,7 @@ $user = $pass = $loginErr = $pass2 = $userErr = $passErr = "";
                     $_SESSION["username"] = $user;
                     $user = $pass = $loginErr = $pass2 = $passErr = "";
                 }
-                header('Location: signin.php');
+                header('Location: index.php');
             }
             catch (Exception $e)
             {
