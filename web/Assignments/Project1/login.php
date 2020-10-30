@@ -26,11 +26,11 @@ include('./php/cartstatus.php');
     else 
     {
         echo '<span class="error"><?php echo $loginErr;?></span>
-        <form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <label> Username: <span> <input type="text" name="user" value="<?php echo $user;?>">
-        <span class="error">* <?php echo $userErr;?></span></span> </label>
-        <label> Create Password: <span> <input type="password" name="pass" value="<?php echo $pass;?>">
-        <span class="error">* <?php echo $passErr;?></span></span> </label>
+        <form id="login" method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
+        <label> Username: <span> <input type="text" name="user" value="'.$user.'">
+        <span class="error">* '.$userErr. '</span></span> </label>
+        <label> Create Password: <span> <input type="password" name="pass" value="'.$pass.'">
+        <span class="error">* '.$passErr.'</span></span> </label>
         <input type="hidden" name="action" value="login">
         <input type="submit" class="button" name="submit" value="Sign-in">
         </form>';
