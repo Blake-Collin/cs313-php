@@ -46,7 +46,7 @@ include('./php/cartstatus.php');
                     INNER JOIN
                         images i ON g.game_id = i.game_id
                     WHERE 
-                        s.sale_id = \''. $game->id .'\';'))
+                        s.sale_id = \''. $game .'\';'))
                         {
                             $details = $rows->fetch(PDO::FETCH_ASSOC);
                         }

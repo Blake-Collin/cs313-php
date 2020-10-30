@@ -1,6 +1,10 @@
 <?php //Session file so if adjustments are needed I can have them across all pages.
  session_start(); 
 
+ class Game {
+    public $sale_id;
+}
+
 $games = Array();
 
  if(isset($_SESSION['games']) && !empty($_SESSION['games']))
@@ -20,7 +24,7 @@ $games = Array();
         $found = false;
         foreach($games as $game)
         {            
-            if($_POST['sale_id'] === $game->id)
+            if($_POST['sale_id'] === $game)
             {                                
                 $found = true;
                 break;
@@ -28,9 +32,8 @@ $games = Array();
         }
 
         if(!$found)
-        {            
-            $id->id = $id;
-            $games[] = $id;
+        {
+            $games[] = $_POST['sale_id'];
         }        
      }
      elseif ($action == "remove")
