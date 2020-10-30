@@ -23,6 +23,7 @@
                 <li><a href="./Teach/05Teach/">W05 - Team Activity</a></li>
                 <li><a href="./Assignments/DBUpdate/">W06 - Database Update Assignment</a></li>
                 <li><a href="./Teach/07Teach/">W07 - Team Activity</a></li>
+                <li><a href="./Assignments/Project1/">W07 - Project 1</a></li>
                 <!-- <li><a href=""></a></li> Template for later additions -->
             </ul>
 		</main>

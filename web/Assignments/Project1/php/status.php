@@ -1,11 +1,4 @@
-<?php //Session file
-//Database setup:
-//CREATE TABLE admins (
-//	admin_id SERIAL NOT NULL PRIMARY KEY,
-//	username VARCHAR(100) NOT NULL UNIQUE,
-//	stored_hash TEXT NOT NULL
-//);
-
+<?php 
  session_start(); 
 
  $time = $_SERVER['REQUEST_TIME'];
