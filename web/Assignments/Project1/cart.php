@@ -44,10 +44,10 @@ include('./php/cartstatus.php');
                         if(
                             $rows = $db->query('SELECT 
                             s.sale_id,
-                            g.name,
+                            s.price,
+                            g.name,                            
                             i.img_name,
-                            i.alt_txt,
-                            s.price
+                            i.alt_txt
                         FROM
                             for_sale s
                         INNER JOIN

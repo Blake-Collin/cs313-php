@@ -20,7 +20,7 @@ $games = Array();
         $found = false;
         foreach($games as $game)
         {            
-            if($_POST['id'] == $game)
+            if($_POST['sale_id'] == $game)
             {                                
                 $found = true;
                 break;
@@ -36,7 +36,7 @@ $games = Array();
      {
         foreach($games as $key => $game)
         {
-            if($_POST['id'] == $game)
+            if($_POST['sale_id'] == $game)
             {
                 unset($games[$key]);
                 break;
