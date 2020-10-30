@@ -38,7 +38,7 @@ include('./php/cartstatus.php');
                             <th>Price</th>                            
                             <th>Remove?</th>
                         </tr>';
-                    foreach($games as $key => $id)
+                    foreach($games as $game)
                     {
                         //Fetch the row for the ID
                         if(
@@ -55,7 +55,7 @@ include('./php/cartstatus.php');
                         INNER JOIN
                             images i ON g.game_id = i.game_id
                         WHERE 
-                            s.sale_id = '. $id .';'))
+                            s.sale_id = \''. $game .'\';'))
                             {
                                 $details = $rows->fetch(PDO::FETCH_ASSOC);
                             }
