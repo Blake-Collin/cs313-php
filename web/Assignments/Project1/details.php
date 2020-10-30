@@ -207,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <td>'. $row['condition']. '</td>
                                 <td> <p>' .  $row['price']  . '</p></td>';
                                 
-                                if(isset($_SESSION['logged']) && $_SESSION['logged'])
+                                if(isset($_SESSION['logged']) && $_SESSION['logged'] && !in_array($row['sale_id'],$games))
                                 {
                                     echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID  .'">
                                     <input type="hidden" name="action" value="add">
