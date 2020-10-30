@@ -60,7 +60,6 @@ include('./php/cartstatus.php');
 
                 echo '<tr id="totalRow">
                         <td class="hidden"></td>
-                        <td class="hidden"></td>
                         <td>Total:</td>
                         <td>$' . number_format($total,2) . '</td>
                       </tr>
