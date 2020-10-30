@@ -15,7 +15,6 @@ include('./php/cartstatus.php');
     <?php include('./php/header.php'); ?>
 
     <?php include('./php/nav.php'); ?>
-    <?php print_r($games); ?>
     <main>
         <h2>Confrimation Page - Thank You!</h2>
         <?php 
