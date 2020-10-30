@@ -201,11 +201,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '</tr></thead><tbody>';
                     foreach($db->query("SELECT s.sale_id, s.price, s.condition, s.sold::int FROM for_sale s WHERE s.game_id = '$ID'") as $row)
                     {
-                        echo '<tr>
+                        if(!(bool)$row['sold'])
+                        {
+                            echo '<tr>
                                 <td>'. $row['condition']. '</td>
                                 <td> <p>' .  $row['price']  . '</p></td>';
                                 
-                                if(isset($_SESSION['logged']) && $_SESSION['logged'] && (bool)$row['sold'])
+                                if(isset($_SESSION['logged']) && $_SESSION['logged'])
                                 {
                                     echo '<td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . "?ID=" . $ID  .'">
                                     <input type="hidden" name="action" value="add">
@@ -215,6 +217,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </td>';
                                 }
                             echo '</tr>';
+                        }                        
                     }
                     echo '</tbody></table>';
                     ?>              
