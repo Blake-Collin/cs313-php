@@ -35,6 +35,7 @@ include('./php/cartstatus.php');
                         $rows = $db->query('SELECT 
                         s.sale_id,
                         g.name,
+                        g.game_id,
                         i.img_name,
                         i.alt_txt,
                         s.price
@@ -53,7 +54,7 @@ include('./php/cartstatus.php');
                     $total += ($details['price']);
                     echo '<tr>
                             <td><img src="./imgs/'. $details['img_name'] . '" alt="'. $details['alt_txt'] .'"></td>
-                            <td>'. $details['name'] . '</td>
+                            <td><a href=\'./details.php?ID='.$details['game_id'].'\'>'. $details['name'] . '</a></td>
                             <td> $' . number_format(($details['price']), 2) .'</td>
                         </tr>';
 
