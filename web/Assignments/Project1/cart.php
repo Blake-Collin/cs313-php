@@ -16,7 +16,7 @@ include('./php/cartstatus.php');
     <?php include('./php/header.php'); ?>
 
     <?php include('./php/nav.php'); ?>
-
+    <?php print_r($games); ?>
     <main>
         <h2>Shopping Cart</h2>
         
@@ -38,7 +38,7 @@ include('./php/cartstatus.php');
                             <th>Price</th>                            
                             <th>Remove?</th>
                         </tr>';
-                    foreach($games as &$game)
+                    foreach($games as $game)
                     {
                         //Fetch the row for the ID
                         if(
