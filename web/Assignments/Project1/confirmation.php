@@ -29,8 +29,9 @@ include('./php/cartstatus.php');
                         <th>Name</th>
                         <th>Price</th>
                     </tr>';
-                foreach($games as &$game)
+                foreach($games as $game)
                 {
+                    echo "Game: $game\n";
                     //Fetch the row for the ID
                     if(
                         $rows = $db->query('SELECT 
