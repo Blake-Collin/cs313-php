@@ -40,7 +40,7 @@ $games = Array();
      {
         foreach($games as $key => $game)
         {
-            if($_POST['sale_id'] == $game)
+            if($_POST['sale_id'] === $game)
             {
                 unset($games[$key]);
                 break;
