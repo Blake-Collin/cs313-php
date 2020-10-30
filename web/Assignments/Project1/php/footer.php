@@ -23,7 +23,7 @@ $user_ip = getUserIP(); ?>
 
 <footer>
     <div class="container">
-        <p>&copy; <?php echo(date("Y")); ?> - Collin Blake - <a href="#">Back to Top</a> - <?php echo(date("m/d/Y")); ?> - Your IP Address: <?php echo($user_ip) ?> - <a href="./create.php">Administration Creation</a>
+        <p>&copy; <?php echo(date("Y")); ?> - Collin Blake - <a href="#">Back to Top</a> - <?php echo(date("m/d/Y")); ?> - Your IP Address: <?php echo($user_ip) ?> - <a href="./create.php">Account Creation</a>
         </p>
     </div>
 </footer>
