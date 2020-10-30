@@ -57,7 +57,7 @@ include('./php/cartstatus.php');
                             <td> $' . number_format(($details['price']), 2) .'</td>
                         </tr>';
 
-                        $update = $db->query("UPDATE for_sale SET sold = TRUE WHERE sale_id = \'". $game ."\';");
+                        $update = $db->query("UPDATE for_sale SET sold = TRUE WHERE sale_id = '". $game ."';");
 
                 }
 
