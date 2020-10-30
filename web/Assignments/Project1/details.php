@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                             
                 echo '</tr></thead><tbody>';
-                    foreach($db->query("SELECT s.sale_id, s.price, s.condition s.sold::int FROM for_sale s WHERE s.game_id = '$ID'") as $row)
+                    foreach($db->query("SELECT s.sale_id, s.price, s.condition, s.sold::int FROM for_sale s WHERE s.game_id = '$ID'") as $row)
                     {
                         echo '<tr>
                                 <td>'. $row['condition']. '</td>
