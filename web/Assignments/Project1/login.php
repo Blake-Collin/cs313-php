@@ -19,7 +19,13 @@ include('./php/cartstatus.php');
 
     <main>
     <h2>Sign In</h2>
-        <span class="error"><?php echo $loginErr;?></span>
+    <?php if(isset($_SESSION['logged']) && $_SESSION['logged']) 
+    {   
+        echo '<p>You are already logged in!</p>';
+    }
+    else 
+    {
+        echo '<span class="error"><?php echo $loginErr;?></span>
         <form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <label> Username: <span> <input type="text" name="user" value="<?php echo $user;?>">
         <span class="error">* <?php echo $userErr;?></span></span> </label>
@@ -27,7 +33,11 @@ include('./php/cartstatus.php');
         <span class="error">* <?php echo $passErr;?></span></span> </label>
         <input type="hidden" name="action" value="login">
         <input type="submit" class="button" name="submit" value="Sign-in">
-        </form>
+        </form>';
+    }
+    
+
+        ?>
     </main>
     <?php include('./php/footer.php'); ?>
 </body>
