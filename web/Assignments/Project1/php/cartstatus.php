@@ -20,7 +20,7 @@ $games = Array();
         $found = false;
         foreach($games as $game)
         {            
-            if($_POST['sale_id'] === $game)
+            if($_POST['sale_id'] === $game->id)
             {                                
                 $found = true;
                 break;
@@ -29,7 +29,8 @@ $games = Array();
 
         if(!$found)
         {            
-            $games[] = $id->$id;
+            $id->id = $id;
+            $games[] = $id;
         }        
      }
      elseif ($action == "remove")
