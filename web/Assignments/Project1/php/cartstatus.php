@@ -29,7 +29,7 @@ $games = Array();
 
         if(!$found)
         {            
-            $games[] = $id;
+            $games[] = $id->$id;
         }        
      }
      elseif ($action == "remove")
