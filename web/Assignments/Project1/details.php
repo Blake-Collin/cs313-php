@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         {
                             echo '<tr>
                                 <td>'. $row['condition']. '</td>
-                                <td> <p>' .  $row['price']  . '</p></td>';
+                                <td> <p>$' .  $row['price']  . '</p></td>';
                                 
                                 if(isset($_SESSION['logged']) && $_SESSION['logged'] && !in_array($row['sale_id'],$games))
                                 {

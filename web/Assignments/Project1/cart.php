@@ -66,7 +66,7 @@ include('./php/cartstatus.php');
                                 <td> $' . number_format(($details['price']), 2) .'</td>                                                                
                                 <td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'">
                                         <input type="hidden" name="action" value="remove">
-                                        <input type="hidden" name="name" value="' . $details['sale_id'] . '">
+                                        <input type="hidden" name="sale_id" value="' . $details['sale_id'] . '">
                                         <input type="submit" value="Remove">
                                     </form> 
                                 </td>
