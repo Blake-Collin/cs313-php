@@ -38,7 +38,7 @@ include('./php/cartstatus.php');
                             <th>Price</th>                            
                             <th>Remove?</th>
                         </tr>';
-                    foreach($games as $game)
+                    foreach($games as &$game)
                     {
                         //Fetch the row for the ID
                         if(
