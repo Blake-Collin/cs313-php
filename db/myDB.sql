@@ -138,7 +138,7 @@ INSERT INTO images (game_id, img_name, alt_txt)
 INSERT INTO images (game_id, img_name, alt_txt)
 	VALUES ('7', 'warofthering2nd.jpg', 'Box Art for War of the Ring 2nd Edition');
 	
---Test our items are working and connected
+--Test Queries
 SELECT g.name, i.img_name, i.alt_txt
 FROM games g, images i
 WHERE g.game_id = i.game_id;
@@ -159,7 +159,6 @@ reviews r
 WHERE
 r.game_id = '1';
 
---Test joining tables and specific games by id
 SELECT 
 	g.name,
 	d.description_text,
@@ -182,9 +181,3 @@ INNER JOIN
 	images i ON g.game_id = i.game_id
 WHERE 
 	g.game_id = 1;
---ORDER BY duration;
-	
-
---INSERT INTO reviews (game_id, rating, review_text) VALUES ('', '', '');
-
---INSERT INTO for_sale (game_id, price, condition) VALUES ('', '', '');
