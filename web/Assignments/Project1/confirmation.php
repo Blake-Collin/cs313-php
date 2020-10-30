@@ -29,7 +29,7 @@ include('./php/cartstatus.php');
                         <th>Name</th>
                         <th>Price</th>
                     </tr>';
-                foreach($games as $id)
+                foreach($games as $key => $id)
                 {
                     //Fetch the row for the ID
                     if(
@@ -51,7 +51,7 @@ include('./php/cartstatus.php');
                             $details = $rows->fetch(PDO::FETCH_ASSOC);
                         }
 
-                    $total += ($details['price']);                        
+                    $total += ($details['price']);
                     echo '<tr>
                             <td><img src="./imgs/'. $details['img_name'] . '" alt="'. $details['alt_txt'] .'"></td>
                             <td>'. $details['name'] . '</td>

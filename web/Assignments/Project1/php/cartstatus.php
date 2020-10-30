@@ -20,11 +20,11 @@ $games = Array();
         $found = false;
         foreach($games as $game)
         {            
-            if($_POST['id'] === $game)
+            if($_POST['id'] == $game)
             {                                
                 $found = true;
                 break;
-            }            
+            }
         }
 
         if(!$found)
