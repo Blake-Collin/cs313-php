@@ -63,7 +63,7 @@ include('./php/cartstatus.php');
                         $total += ($details['price']);                        
                         echo '<tr>
                                 <td><img src="./imgs/'. $details['img_name'] . '" alt="'. $details['alt_txt'] .'"></td>
-                                <td><a href=\'./details.php?ID='.$row['game_id'].'\'>'. $details['name'] . '</a></td>
+                                <td><a href=\'./details.php?ID='.$details['game_id'].'\'>'. $details['name'] . '</a></td>
                                 <td> $' . number_format(($details['price']), 2) .'</td>                                                                
                                 <td> <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'">
                                         <input type="hidden" name="action" value="remove">
