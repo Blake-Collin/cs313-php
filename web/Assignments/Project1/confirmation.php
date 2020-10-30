@@ -56,6 +56,9 @@ include('./php/cartstatus.php');
                             <td>'. $details['name'] . '</td>
                             <td> $' . number_format(($details['price']), 2) .'</td>
                         </tr>';
+
+                        $update = $db->query("UPDATE for_sale SET sold = TRUE WHERE sale_id = \'". $game ."\';");
+
                 }
 
                 echo '<tr id="totalRow">

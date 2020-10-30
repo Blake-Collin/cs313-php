@@ -21,7 +21,7 @@ include('./php/cartstatus.php');
     <h2>Sign In</h2>
     <?php if(isset($_SESSION['logged']) && $_SESSION['logged']) 
     {   
-        echo '<p>You are already logged in!</p>';
+        echo '<div><p>You are already logged in!</p></div>';
     }
     else 
     {
